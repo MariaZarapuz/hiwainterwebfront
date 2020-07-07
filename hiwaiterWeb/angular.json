@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "hiwaiterWeb"
+    }
+  },
+  "defaultProject": "hiwaiterWeb",
+  "cli": {
+    "analytics": false
+  }
 }

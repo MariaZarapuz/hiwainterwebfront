@@ -1,0 +1,22 @@
+.container p {
+  margin: 0 auto;
+  padding: 5px 0px;
+}
+
+.container p,
+li {
+  font-family: Scribble;
+  font-size: 25px;
+}
+
+.container h3,
+h2 {
+  font-family: StaleMarker;
+  padding: 15px 0px;
+  font-size: 100px;
+  color: rgb(255, 184, 5);
+}
+
+.container li {
+  padding: 10px 0px
+}

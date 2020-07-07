@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: rgba(10, 9, 9, 0.904);
+  color: white;
+}
+
+@font-face {
+  font-family: 'StaleMarker';
+  src: url('./assets/type/StaleMarker.ttf');
+}
+
+@font-face {
+  font-family: 'Bad';
+  src: url('./assets/type/BadGong.ttf');
+}
+
+@font-face {
+  font-family: 'Scribble';
+  src: url('./assets/type/ScribbleScript.ttf');
+}
+
+@font-face {
+  font-family: 'ColoredCrayons';
+  src: url('./assets/type/ColoredCrayons.ttf');
+}
