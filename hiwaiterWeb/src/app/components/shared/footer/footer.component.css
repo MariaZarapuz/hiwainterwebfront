@@ -1,0 +1,33 @@
+.container-fluid {
+  background-color: rgb(255, 184, 5);
+  padding: 20px 0;
+  margin: 0px;
+}
+
+.social {
+  cursor: pointer;
+  margin: 0 15px;
+}
+
+.social:first-child {
+  margin-left: 0px;
+}
+
+.social:hover {
+  color: white;
+}
+
+.col-6 {
+  font-family: StaleMarker;
+  font-size: 42px;
+  color: black;
+  margin: 0px;
+}
+
+.col-6:first-child {
+  padding-left: 80px;
+}
+
+.col-6:last-child {
+  padding-right: 80px;
+}
