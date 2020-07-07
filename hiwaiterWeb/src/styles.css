@@ -10,16 +10,6 @@ body {
 }
 
 @font-face {
-  font-family: 'Bad';
-  src: url('./assets/type/BadGong.ttf');
-}
-
-@font-face {
   font-family: 'Scribble';
   src: url('./assets/type/ScribbleScript.ttf');
-}
-
-@font-face {
-  font-family: 'ColoredCrayons';
-  src: url('./assets/type/ColoredCrayons.ttf');
 }
