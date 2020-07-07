@@ -26,7 +26,13 @@ export class HomeComponent implements OnInit {
     whyAdminDescription2: 'Ganaras tiempo ya que no tendras que tomar nota de los pedidos',
     whyAdminDescription3: 'Te organizamos los pedidos por mesas sin posibilidad de fallos,',
     whyAdminDescription4: 'Podras imprimir el ticket desde la propia web',
-    whyAdminDescription5: 'Tu carta siempre actualizada, nunca volveras a decir "No nos queda", podras modificar tu diaramente tu carta ademas de añadir productos y modificarlos.'
+    whyAdminDescription5: 'Tu carta siempre actualizada, nunca volveras a decir "No nos queda", podras modificar tu diaramente tu carta ademas de añadir productos y modificarlos.',
+    yet: '¿Todavia no lo tienes claro?',
+    demo: 'Aqui te dejamos unos videos de demostracion.',
+    like: '¿Te gusta la idea?',
+    contact: 'Contactanos:',
+    mobile: 'Telefono: 666462692',
+    email: 'Email: mariazarapuz@gmail.com'
   };
 
   constructor() { }
