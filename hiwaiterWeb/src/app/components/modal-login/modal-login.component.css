@@ -1,0 +1,42 @@
+.titleModal {
+  color: rgb(255, 184, 5);
+  background-color: black;
+}
+.bodyModal {
+  background-color: rgb(255, 184, 5);
+}
+.close {
+  padding: 0px;
+  margin: 0px;
+  color: black;
+}
+.modal-title {
+  margin: 0 auto;
+}
+.modal-content {
+  background-color: rgba(10, 9, 9, 0.904);
+}
+.iconUser {
+  text-align: center;
+  color: rgba(10, 9, 9, 0.904);
+  font-size: 122px;
+}
+
+.formLogin {
+  margin: 20px;
+}
+
+label {
+  color: black;
+}
+
+.btnSubmit {
+  background-color: rgba(10, 9, 9, 0.904);
+  color: rgb(255, 184, 5);
+  margin-top: 40px;
+}
+.btnSubmit:hover {
+  color: rgba(10, 9, 9, 0.904);
+  background-color: rgb(255, 184, 5);
+  border: 1px solid rgba(10, 9, 9, 0.904);
+}
