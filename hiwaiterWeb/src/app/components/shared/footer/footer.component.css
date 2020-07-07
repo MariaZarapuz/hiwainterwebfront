@@ -9,12 +9,12 @@
   margin: 0 15px;
 }
 
-.social:first-child {
-  margin-left: 0px;
-}
-
 .social:hover {
   color: white;
+}
+
+.social:first-child {
+  margin-left: 0px;
 }
 
 .col-6 {
