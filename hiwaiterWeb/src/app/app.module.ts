@@ -12,7 +12,7 @@ import { HeaderComponent } from './components/shared/header/header.component';
 import { ModalLoginComponent } from './components/modal-login/modal-login.component';
 import { SpaceComponent } from './components/space/space.component';
 import { ListTablesComponent } from './components/tables/list-tables/list-tables.component';
-import { CommonModule } from '@angular/common';
+import { TableDetailComponent } from './components/tables/table-detail/table-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,9 +23,9 @@ import { CommonModule } from '@angular/common';
     ModalLoginComponent,
     SpaceComponent,
     ListTablesComponent,
+    TableDetailComponent
   ],
   imports: [
-    CommonModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,

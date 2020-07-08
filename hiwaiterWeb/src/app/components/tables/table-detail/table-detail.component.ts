@@ -25,7 +25,7 @@ export class TableDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRouter.params.subscribe(params => this.id = params.id);
-    console.log(this.listOrder)
+    console.log(this.listOrder);
   }
 
 }

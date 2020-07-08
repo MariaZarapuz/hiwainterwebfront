@@ -6,7 +6,9 @@
       <h3>Pedido</h3>
       <div>
         <h5>Entrantes</h5>
-        <p *ngFor="let order of listOrder"></p>
+        <div *ngFor="let order of listOrder">
+          <p *ngFor="let entrante of order.pedido.entrantes">{{ entrante.Nombre }} {{entrante.Cantidad}}</p>
+        </div>
       </div>
     </div>
   </div>
