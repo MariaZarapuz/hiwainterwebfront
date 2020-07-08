@@ -14,11 +14,11 @@
   margin: 0 auto;
 }
 .modal-content {
-  background-color: rgba(10, 9, 9, 0.904);
+  background-color:rgb(10, 9, 9);
 }
 .iconUser {
   text-align: center;
-  color: rgba(10, 9, 9, 0.904);
+  color:rgb(10, 9, 9);
   font-size: 122px;
 }
 
@@ -31,12 +31,12 @@ label {
 }
 
 .btnSubmit {
-  background-color: rgba(10, 9, 9, 0.904);
+  background-color:rgb(10, 9, 9);
   color: rgb(255, 184, 5);
   margin-top: 40px;
 }
 .btnSubmit:hover {
-  color: rgba(10, 9, 9, 0.904);
+  color:rgb(10, 9, 9);
   background-color: rgb(255, 184, 5);
-  border: 1px solid rgba(10, 9, 9, 0.904);
+  border: 1px solidrgb(10, 9, 9);
 }

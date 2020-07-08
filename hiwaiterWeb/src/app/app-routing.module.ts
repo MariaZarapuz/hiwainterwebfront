@@ -2,12 +2,18 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { SpaceComponent } from './components/space/space.component';
+import { ListTablesComponent } from './components/tables/list-tables/list-tables.component';
+import { TableDetailComponent } from './components/tables/table-detail/table-detail.component';
 
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
-  { path: 'space', component: SpaceComponent }
+  { path: 'space', component: SpaceComponent },
+  { path: 'listTables', component: ListTablesComponent },
+  { path: 'tableDetail/:id', component: TableDetailComponent }
+
+
 
 ];
 

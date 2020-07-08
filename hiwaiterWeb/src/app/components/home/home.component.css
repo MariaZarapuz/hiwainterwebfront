@@ -9,16 +9,15 @@
 
 .container p,
 li {
-  font-family: Scribble;
-  font-size: 25px;
+  font-family: bodedo;
+  font-size: 19px;
 }
 
 .container h3,
 h2,
 h4 {
-  font-family: StaleMarker;
   padding: 15px 0px;
-  font-size: 100px;
+  font-size: 40px;
   color: rgb(255, 184, 5);
 }
 

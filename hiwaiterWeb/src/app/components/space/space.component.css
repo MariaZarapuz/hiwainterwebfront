@@ -1,7 +1,7 @@
 div h2 {
   text-align: center;
-  font-family: StaleMarker;
-  font-size: 80px;
+  font-size: 40px;
+  margin-top: 30px
 }
 
 .logo {
@@ -11,9 +11,9 @@ div h2 {
 div .btn {
   background-color: white;
   margin: 0px 0px 40px 0px;
-  font-size: 45px;
+  padding: 25px 0px;
+  font-size: 25px;
   font-weight: 900;
-  font-family: StaleMarker;
 }
 
 div .btn.btn:hover {
@@ -23,11 +23,15 @@ div .btn.btn:hover {
 
 .container p {
   padding: 25px 0px;
-  font-family: Scribble;
-  font-size: 25px;
+  font-family: bodedo;
+  font-size: 19px;
 }
 
 .container-fluid {
   background-color: white;
   text-align: center;
+}
+
+.container {
+  margin-top: 4%;
 }

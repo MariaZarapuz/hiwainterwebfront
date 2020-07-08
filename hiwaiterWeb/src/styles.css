@@ -1,15 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-color: rgba(10, 9, 9, 0.904);
+  background-color: rgb(10, 9, 9);
   color: white;
 }
 
-@font-face {
-  font-family: 'StaleMarker';
-  src: url('./assets/type/StaleMarker.ttf');
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: tiza;
 }
 
 @font-face {
-  font-family: 'Scribble';
-  src: url('./assets/type/ScribbleScript.ttf');
+  font-family: 'Tiza';
+  src: url('./assets/type/tiza.ttf');
+}
+
+@font-face {
+  font-family: 'bodedo';
+  src: url('./assets/type/HVD_Bodedo.ttf');
 }

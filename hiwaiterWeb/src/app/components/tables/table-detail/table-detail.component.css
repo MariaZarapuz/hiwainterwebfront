@@ -1,0 +1,10 @@
+.container h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 110px;
+}
+
+.row div {
+  margin: 25px auto;
+  text-decoration: underline;
+}
