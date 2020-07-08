@@ -35,8 +35,26 @@ label {
   color: rgb(255, 184, 5);
   margin-top: 40px;
 }
+
 .btnSubmit:hover {
   color: rgba(10, 9, 9, 0.904);
   background-color: rgb(255, 184, 5);
   border: 1px solid rgba(10, 9, 9, 0.904);
 }
+
+.form-control {
+  padding-left: 40px!important;
+}
+.form-group{
+position: relative;
+}
+.form-group fa-icon{
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  color: black;
+  margin-left: 5px;
+
+}
+
+
