@@ -15,21 +15,21 @@
   cursor: pointer;
 }
 
-.container div p {
+.container div div h5 {
   text-align: center;
   margin-top: 15px;
   font-size: 23px;
   text-decoration: underline;
 }
 
-.container div h3 {
+.container div div h3 {
   text-align: center;
+  margin-top: 15px;
   font-family: bodedo;
 }
 
 .green {
   color: green;
-
 }
 
 .red {

@@ -1,0 +1,9 @@
+<div *ngFor="let array of arrayCategory">
+  <p *ngFor="let order of item.order[array.name]" [ngClass]="{'none': order.served !== served}">
+    <img src="../../../../assets/imagenes/{{array.icons}}.png" alt="{{array.icons}}" title="{{array.icons}}">
+    {{order.name}}
+    <span>x{{order.quantity}}</span>
+    <img class="tick" *ngIf="order.state !=='No preparado'" src="../../../../assets/imagenes/listo.png" alt="">
+  </p>
+
+</div>
