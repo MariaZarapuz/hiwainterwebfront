@@ -10,6 +10,14 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.getLocalstorage();
+
   }
 
+  getLocalstorage() {
+    const tokenExist = localStorage.getItem('token');
+    console.log(tokenExist);
+    return tokenExist;
+
+  }
 }

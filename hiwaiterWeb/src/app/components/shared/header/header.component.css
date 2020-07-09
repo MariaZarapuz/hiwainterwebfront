@@ -15,6 +15,7 @@
   font-size: 19px;
   font-family: bodedo;
   transition: 0.5s;
+  margin: 10px;
 }
 
 .btnLogin:hover {

@@ -16,6 +16,7 @@ export class ModalLoginComponent implements OnInit {
   faUser = faUser;
   form: FormGroup;
   display: boolean;
+  result: any;
 
 
   constructor(private loginService: LoginService, private router: Router) {
@@ -29,11 +30,18 @@ export class ModalLoginComponent implements OnInit {
   ngOnInit(): void {
   }
   async onSubmit() {
-    console.log(this.form.value)
-    const result = await this.loginService.login(this.form.value);
-    $('[data-dismiss = modal]').trigger({ type: 'click' });
-    console.log(result)
-    this.router.navigate(['/space']);
+    this.result = await this.loginService.login(this.form.value);
+    if (this.result !== 'Autentificación fallida') {
+      $('[data-dismiss = modal]').trigger({ type: 'click' });
+      console.log(this.result);
+      this.result = this.result['success'];
+      localStorage.setItem('token', this.result);
+      this.router.navigate(['/space']);
+
+    }
+
+
+
   }
 
 }
