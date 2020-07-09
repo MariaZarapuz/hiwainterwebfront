@@ -4,6 +4,7 @@ import { faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+declare var $;
 
 @Component({
   selector: 'app-modal-login',
@@ -14,6 +15,8 @@ export class ModalLoginComponent implements OnInit {
   faLock = faLock;
   faUser = faUser;
   form: FormGroup;
+  display: boolean;
+
 
   constructor(private loginService: LoginService, private router: Router) {
     this.form = new FormGroup({
@@ -25,8 +28,11 @@ export class ModalLoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onSubmit() {
-    this.loginService.login(this.form.value);
+  async onSubmit() {
+    console.log(this.form.value)
+    const result = await this.loginService.login(this.form.value);
+    $('[data-dismiss = modal]').trigger({ type: 'click' });
+    console.log(result)
     this.router.navigate(['/space']);
   }
 
