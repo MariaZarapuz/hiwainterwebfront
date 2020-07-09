@@ -26,7 +26,9 @@
           <input type="password" class="form-control" formControlName="password" placeholder="Password">
           <fa-icon [icon]="faLock"></fa-icon>
         </div>
-
+        <div *ngIf="result === 'Autentificación fallida'">
+          <p>C.I.F y/o contraseña inválida</p>
+        </div>
 
         <button type="submit" class="btn btn-block btnSubmit">Iniciar</button>
       </form>
