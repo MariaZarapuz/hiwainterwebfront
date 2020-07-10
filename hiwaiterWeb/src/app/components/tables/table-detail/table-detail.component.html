@@ -5,11 +5,11 @@
       [ngClass]="{'col-12':  orderData[1].listOrder.length===1,'col-6': orderData[1].listOrder.length===2,'col-4': orderData[1].listOrder.length>=3}">
       <h2 class="order">Pedido {{i+1}}</h2>
       <div>
-        <h3 (click)="servedOrNotServed($event,'noServed')" class="noServed">NO servido</h3>
+        <h3 (click)="haveClass($event,'noServed')" class="noServed">NO servido</h3>
         <div>
           <app-body-order [item]='item' [served]="'No servido'"></app-body-order>
         </div>
-        <h3 (click)="servedOrNotServed($event,'served')" class="served">Servido</h3>
+        <h3 (click)="haveClass($event,'served')" class="served">Servido</h3>
         <div class="none">
           <app-body-order [item]='item' [served]="'Servido'"></app-body-order>
         </div>

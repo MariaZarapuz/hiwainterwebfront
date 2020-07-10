@@ -67,24 +67,13 @@ export class TableDetailComponent implements OnInit {
     console.log(this.orderData);
   }
 
-  servedOrNotServed(e, state) {
-    let haveClass
-    console.log(e);
-    console.log(state)
-    if (state === 'noServed') {
-      haveClass = e.target.parentNode.childNodes[1].classList[0];
-    } else {
-      haveClass = e.target.parentNode.childNodes[3].classList[0];
-
-    }
-    console.log(haveClass)
-    this.removeClass(state, e, haveClass)
-
+  haveClass(e, state) {
+    const element = state === 'noServed' ? 1 : 3;
+    const haveClass = e.target.parentNode.childNodes[element].classList[0];
+    this.removeClass(e, haveClass, element);
   }
 
-  removeClass(state, e, haveClass) {
-    console.log(state)
-    const element = state === 'noServed' ? 1 : 3;
+  removeClass(e, haveClass, element) {
 
     if (haveClass === 'none') {
       e.target.parentNode.childNodes[element].classList.remove('none');
