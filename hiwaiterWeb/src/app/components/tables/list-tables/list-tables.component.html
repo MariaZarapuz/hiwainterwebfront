@@ -1,23 +1,31 @@
 <div class="container">
   <h2>Mesas</h2>
 
-  <div class="row">
-    <div id="{{table.number}}" *ngFor="let table of listTables" class="table col-4"
-      [routerLink]="['/tableDetail', table.number]">
+  <div>
+
+    <div *ngFor="let literal of ArrayStatusLiteral">
+      <h3>{{literal.translate}}</h3>
+      <div *ngFor="let status of ArrayStatus; let i=index ">
+        <h4 *ngFor="let category of status[literal.name]" class="">Mesa{{category.number}}</h4>
+      </div>
+
+    </div>
+    <!-- <div id="{{table}}" *ngFor="let table of this.ArrayStatus" class="table col-4"
+      [routerLink]="['/tableDetail', table]">
       <div class="mt-5">
 
-        <h5>Mesa {{table.number}}</h5>
-        <h3 [ngClass]="{
+        <h5>Mesa {{table}}</h5> -->
+    <!-- <h3 [ngClass]="{
             'green': table.state === 'Pedido servido',
             'white': table.state === 'Mesa vacia',
             'red': table.state === 'Solicitan camarero',
             'orange': table.state === 'Cuenta solicitada',
             'blue': table.state=== 'Pedido en cocina',
             'yellow': table.state=== 'Pedido recepcionado'
-          }">{{table.state}}
-        </h3>
-      </div>
+          }">{{table.state}} -->
+    <!-- </h3> -->
+    <!-- </div>
 
-    </div>
+    </div> -->
   </div>
 </div>

@@ -1,31 +1,11 @@
 .container h2 {
   text-align: center;
-  margin-top: 110px;
+  margin-top: 30px;
   font-size: 40px;
 }
 
 .container div {
   margin-top: 15px;
-}
-
-.container div .table {
-  background-color: white;
-  height: 200px;
-  border: 15px solid rgb(10, 9, 9);
-  cursor: pointer;
-}
-
-.container div div h5 {
-  text-align: center;
-  margin-top: 15px;
-  font-size: 23px;
-  text-decoration: underline;
-}
-
-.container div div h3 {
-  text-align: center;
-  margin-top: 15px;
-  font-family: bodedo;
 }
 
 .green {

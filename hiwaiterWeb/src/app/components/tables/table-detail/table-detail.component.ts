@@ -74,7 +74,6 @@ export class TableDetailComponent implements OnInit {
   }
 
   removeClass(e, haveClass, element) {
-
     if (haveClass === 'none') {
       e.target.parentNode.childNodes[element].classList.remove('none');
     } else {
