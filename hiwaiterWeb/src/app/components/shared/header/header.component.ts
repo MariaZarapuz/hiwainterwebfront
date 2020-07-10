@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
 
   getLocalstorage() {
     const tokenExist = localStorage.getItem('token');
-    console.log(tokenExist);
     return tokenExist;
 
   }

@@ -6,9 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./body-order.component.css']
 })
 export class BodyOrderComponent implements OnInit {
-  @Input() served;
-  @Input() prepared;
 
+  @Input() served;
   @Input() item;
 
   arrayCategory = [
@@ -23,7 +22,6 @@ export class BodyOrderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.prepared)
   }
 
 }
