@@ -1,9 +1,9 @@
 <div class="container">
-  <h2>Mesa {{id}}</h2>
+  <h2>{{msg.TABLE}} {{id}}</h2>
   <div class="row">
     <div *ngFor="let item of orderData[1].listOrder; let i = index "
       [ngClass]="{'col-12':  orderData[1].listOrder.length===1,'col-6': orderData[1].listOrder.length===2,'col-4': orderData[1].listOrder.length>=3}">
-      <h2 class="order">Pedido {{i+1}}</h2>
+      <h2 class="order">{{msg.ORDER}} {{i+1}}</h2>
       <div>
         <h3 (click)="haveClass($event,'noServed')" class="noServed">NO servido</h3>
         <div>

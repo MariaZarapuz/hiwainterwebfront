@@ -1,31 +1,25 @@
 <div class="container">
-  <h2>Mesas</h2>
-
+  <h2>{{msg.TABLES}}</h2>
   <div>
-
-    <div *ngFor="let literal of ArrayStatusLiteral">
-      <h3>{{literal.translate}}</h3>
+    <div class="statusOrder" *ngFor="let literal of ArrayStatusLiteral; let i=index">
+      <h3 *ngIf="countTableCategory[i]" [ngClass]="{
+        'green': literal.translate === msg.ORDERSERVED,
+        'colorRed': literal.translate === msg.WAITERREQUEST,
+        'orange': literal.translate === msg.ACCOUNTREQUESTED,
+        'white': literal.translate=== msg.KITCHENORDER,
+        'purple': literal.translate===msg.ORDERRECEIVED
+      }">{{literal.translate}}</h3>
       <div *ngFor="let status of ArrayStatus; let i=index ">
-        <h4 *ngFor="let category of status[literal.name]" class="">Mesa{{category.number}}</h4>
+        <button [ngClass]="{
+          'green': literal.translate === msg.ORDERSERVED,
+          'red': literal.translate === msg.WAITERREQUEST,
+          'colorOrange': literal.translate === msg.ACCOUNTREQUESTED,
+          'white': literal.translate=== msg.KITCHENORDER,
+          'purple': literal.translate===msg.ORDERRECEIVED
+        }" class="tableNumber btn" *ngFor="let category of status[literal.name]" id='{{category.number}}'
+          [routerLink]="['/tableDetail', category.number]">
+          {{msg.TABLE}} {{category.number}}</button>
       </div>
-
     </div>
-    <!-- <div id="{{table}}" *ngFor="let table of this.ArrayStatus" class="table col-4"
-      [routerLink]="['/tableDetail', table]">
-      <div class="mt-5">
-
-        <h5>Mesa {{table}}</h5> -->
-    <!-- <h3 [ngClass]="{
-            'green': table.state === 'Pedido servido',
-            'white': table.state === 'Mesa vacia',
-            'red': table.state === 'Solicitan camarero',
-            'orange': table.state === 'Cuenta solicitada',
-            'blue': table.state=== 'Pedido en cocina',
-            'yellow': table.state=== 'Pedido recepcionado'
-          }">{{table.state}} -->
-    <!-- </h3> -->
-    <!-- </div>
-
-    </div> -->
   </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { GlobalConstants, Status, Color } from '../../../constantsGlobal';
 
 @Component({
   selector: 'app-table-detail',
@@ -11,6 +12,12 @@ export class TableDetailComponent implements OnInit {
   id: number;
   served = false;
   noServed = true;
+
+  msg = {
+    ORDER: GlobalConstants.ORDER,
+    TABLE: GlobalConstants.TABLE,
+
+  }
 
   orderData = [
     {
