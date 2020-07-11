@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SpaceComponent } from './components/space/space.component';
 import { ListTablesComponent } from './components/tables/list-tables/list-tables.component';
 import { TableDetailComponent } from './components/tables/table-detail/table-detail.component';
+import { KitchenComponent } from './components/kitchen/kitchen/kitchen.component';
 
 
 const routes: Routes = [
@@ -11,7 +12,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'space', component: SpaceComponent },
   { path: 'listTables', component: ListTablesComponent },
-  { path: 'tableDetail/:id', component: TableDetailComponent }
+  { path: 'tableDetail/:id', component: TableDetailComponent },
+  { path: 'kitchen', component: KitchenComponent },
+
 
 
 

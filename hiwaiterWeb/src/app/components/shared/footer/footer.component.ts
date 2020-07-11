@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   msg = {
-    copyright: 'Hi Waiter Copyright 2020'
+    COPYRYGHT: 'Hi Waiter Copyright 2020',
+    FACEBOOK: 'Facebook',
+    TWITTER: 'Twitter',
+    LINKEDIN: 'Liknkedin',
+    INSTAGRAM: 'Instagram'
   };
 
   constructor() { }

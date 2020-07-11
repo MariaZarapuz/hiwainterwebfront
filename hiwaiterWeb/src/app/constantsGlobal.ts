@@ -1,7 +1,10 @@
 export class GlobalConstants {
   static TABLE = 'Mesa';
   static TABLES = 'Mesas';
-  static ORDER = 'Pedido'
+  static ORDER = 'Pedido';
+  static LOGIN = 'Login';
+  static KITCHEN = 'Cocina';
+  static MENU = 'Carta';
 
 }
 export class Status {
@@ -10,6 +13,13 @@ export class Status {
   static ACCOUNTREQUESTED = 'Cuenta solicitada';
   static KITCHENORDER = 'Pedido en cocina';
   static ORDERRECEIVED = 'Pedido recepcionado';
+
+  static NOPREPARED = 'No Preparado';
+  static PREPARED = 'Preparado';
+  static NOSERVED = 'No servido';
+  static SERVED = 'Servido';
+
+
 }
 
 export class Color {
