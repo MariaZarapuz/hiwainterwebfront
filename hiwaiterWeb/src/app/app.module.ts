@@ -15,7 +15,8 @@ import { SpaceComponent } from './components/space/space.component';
 import { ListTablesComponent } from './components/tables/list-tables/list-tables.component';
 import { CommonModule } from '@angular/common';
 import { TableDetailComponent } from './components/tables/table-detail/table-detail.component';
-
+import { FormMenuComponent } from './components/menu/form-menu/form-menu.component';
+import { ListMenuComponent } from './components/menu/list-menu/list-menu.component';
 import { KitchenComponent } from './components/kitchen/kitchen/kitchen.component';
 import { BodyOrderComponent } from './components/shared/body-order/body-order.component';
 
@@ -30,6 +31,8 @@ import { BodyOrderComponent } from './components/shared/body-order/body-order.co
     ListTablesComponent,
     TableDetailComponent,
     BodyOrderComponent,
+    FormMenuComponent,
+    ListMenuComponent,
     KitchenComponent
   ],
   imports: [
