@@ -1,0 +1,16 @@
+.wrapper{
+  margin-top: 300px;
+}
+.modifyCol2{
+  flex: 0 0 16.666667%;
+  max-width: 13.666667%;
+  margin: 1em auto;
+}
+.form-check-input{
+margin-left: -0.75em;
+}
+
+img{
+  margin-left: 1.75em;
+}
+

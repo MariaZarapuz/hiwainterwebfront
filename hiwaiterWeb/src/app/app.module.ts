@@ -16,6 +16,8 @@ import { ListTablesComponent } from './components/tables/list-tables/list-tables
 import { CommonModule } from '@angular/common';
 import { TableDetailComponent } from './components/tables/table-detail/table-detail.component';
 import { BodyOrderComponent } from './components/tables/body-order/body-order.component';
+import { FormMenuComponent } from './components/menu/form-menu/form-menu.component';
+import { ListMenuComponent } from './components/menu/list-menu/list-menu.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { BodyOrderComponent } from './components/tables/body-order/body-order.co
     SpaceComponent,
     ListTablesComponent,
     TableDetailComponent,
-    BodyOrderComponent
+    BodyOrderComponent,
+    FormMenuComponent,
+    ListMenuComponent
   ],
   imports: [
     CommonModule,
