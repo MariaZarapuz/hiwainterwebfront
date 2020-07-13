@@ -8,7 +8,7 @@
   </div>
   <div *ngIf=" getLocalstorage() !== null ">
     <button class="btn btnLogin" data-toggle="modal" [routerLink]="['./listTables']">{{msg.TABLES}}</button>
-    <button class="btn btnLogin" data-toggle="modal">{{msg.MENU}}</button>
+    <button class="btn btnLogin" data-toggle="modal" [routerLink]="['./menu']">{{msg.MENU}}</button>
     <button class="btn btnLogin" data-toggle="modal" [routerLink]="['./kitchen']">{{msg.KITCHEN}}</button>
   </div>
 </nav>

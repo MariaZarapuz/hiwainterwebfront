@@ -1,10 +1,10 @@
-import { FormMenuComponent } from './components/menu/form-menu/form-menu.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { SpaceComponent } from './components/space/space.component';
 import { ListTablesComponent } from './components/tables/list-tables/list-tables.component';
 import { TableDetailComponent } from './components/tables/table-detail/table-detail.component';
+import { FormMenuComponent } from './components/menu/form-menu/form-menu.component';
 import { ListMenuComponent } from './components/menu/list-menu/list-menu.component';
 import { KitchenComponent } from './components/kitchen/kitchen/kitchen.component';
 
@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'space', component: SpaceComponent },
   { path: 'listTables', component: ListTablesComponent },
   { path: 'tableDetail/:id', component: TableDetailComponent },
-  { path: 'form-menu', component: FormMenuComponent },
+  { path: 'menu/form-menu', component: FormMenuComponent },
   { path: 'menu', component: ListMenuComponent },
   { path: 'kitchen', component: KitchenComponent },
 
