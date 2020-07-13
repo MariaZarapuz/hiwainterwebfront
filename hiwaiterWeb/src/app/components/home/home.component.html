@@ -3,28 +3,16 @@
   <p>{{msg.WHATDESCRIPTION}}</p>
   <h2>{{msg.HOW}}</h2>
   <ul class="text-left">
-    <li>{{msg.HOWDESCRIPTION1}}</li>
-    <li>{{msg.HOWDESCRIPTION2}}</li>
-    <li>{{msg.HOWDESCRIPTION3}}</li>
-    <li>{{msg.HOWDESCRIPTION4}}</li>
+    <li *ngFor="let item of arrayHowdescription">{{item}}</li>
   </ul>
 
   <h2>{{msg.WHYUSER}}</h2>
   <ul class="text-left">
-    <li>{{msg.WHYDESCRIPTIONUSER1}}</li>
-    <li>{{msg.WHYDESCRIPTIONUSER2}}
-    </li>
-    <li>{{msg.WHYDESCRIPTIONUSER3}}</li>
-    <li>{{msg.WHYDESCRIPTIONUSER4}}</li>
-    <li>{{msg.WHYDESCRIPTIONUSER5}}</li>
+    <li *ngFor="let item of arrayWhydescriptonuser">{{item}}</li>
   </ul>
   <h2>{{msg.WHYADMIN}}</h2>
   <ul class="text-left">
-    <li>{{msg.WHYADMINDESCRIPTION1}}</li>
-    <li>{{msg.WHYADMINDESCRIPTION2}}</li>
-    <li>{{msg.WHYADMINDESCRIPTION3}}</li>
-    <li>{{msg.WHYADMINDESCRIPTION4}}</li>
-    <li>{{msg.WHYADMINDESCRIPTION5}} </li>
+    <li *ngFor="let item of arrayWhyAdminDescription">{{item}}</li>
   </ul>
 
   <h2>{{msg.YET}}</h2>

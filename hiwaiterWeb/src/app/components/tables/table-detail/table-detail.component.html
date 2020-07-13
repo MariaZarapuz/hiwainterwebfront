@@ -1,17 +1,17 @@
 <div class="container">
-  <h2>{{msg.TABLE}} {{id}}</h2>
+  <h2 class="subtittle">{{msg.TABLE}} {{id}}</h2>
   <div class="row">
-    <div *ngFor="let item of orderData[1].listOrder; let i = index "
-      [ngClass]="{'col-12':  orderData[1].listOrder.length===1,'col-6': orderData[1].listOrder.length===2,'col-4': orderData[1].listOrder.length>=3}">
+    <div *ngFor="let item of orderData; let i = index "
+      [ngClass]="{'col-12':  orderData.length===1,'col-6': orderData.length===2,'col-4': orderData.length>=3}">
       <h2 class="order">{{msg.ORDER}} {{i+1}}</h2>
       <div>
         <h3 (click)="haveClass($event,'noServed')" class="noServed">{{msg.NOSERVED}}</h3>
         <div>
-          <app-body-order [item]='item' [served]="'No servido'"></app-body-order>
+          <app-body-order [item]='item[0].order' [mode]="'table'" [served]="'No servido'"></app-body-order>
         </div>
         <h3 (click)="haveClass($event,'served')" class="served">{{msg.SERVED}}</h3>
         <div class="none">
-          <app-body-order [item]='item' [served]="'Servido'"></app-body-order>
+          <app-body-order [item]='item[0].order' [mode]="'table'" [served]="'Servido'"></app-body-order>
         </div>
       </div>
     </div>

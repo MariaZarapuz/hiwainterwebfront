@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Status } from 'src/app/constantsGlobal';
 
 @Component({
   selector: 'app-body-order',
@@ -7,8 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BodyOrderComponent implements OnInit {
 
+  msg = {
+    PREPARED: Status.PREPARED,
+    NOPREPARED: Status.NOPREPARED,
+  };
+
   @Input() served;
   @Input() item;
+  @Input() mode;
 
   arrayCategory = [
     { name: 'inbound', icons: 'entrantes' },
@@ -25,3 +32,4 @@ export class BodyOrderComponent implements OnInit {
   }
 
 }
+

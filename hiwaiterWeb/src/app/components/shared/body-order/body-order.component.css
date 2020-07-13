@@ -50,6 +50,6 @@ span {
   cursor: pointer;
 }
 
-.none {
-  display: none;
+.show {
+  display: block;
 }

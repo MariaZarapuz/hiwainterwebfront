@@ -1,1 +1,19 @@
-<p>kitchen works!</p>
+<div class="container text-center">
+  <h2 class="subtittle">Comandas</h2>
+  <div class="row">
+    <div *ngFor="let tableString of this.arrayTableString"
+      [ngClass]="{'col-12':  arrayTableString.length===1,'col-6': arrayTableString.length===2,'col-4': arrayTableString.length>=3}">
+      <h3>{{tableString}}</h3>
+      <div *ngFor="let item of array">
+        <!-- <p>{{item[tableString]|json}}</p> -->
+        <div *ngFor="let order of item[tableString]">
+          <div *ngFor="let item of order">
+            <!-- <p>{{item[0].order|json}}</p> -->
+            <app-body-order [item]='item[0].order' [mode]="'kitchen'"></app-body-order>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

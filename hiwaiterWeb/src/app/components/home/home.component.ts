@@ -35,6 +35,19 @@ export class HomeComponent implements OnInit {
     EMAIL: 'Email: mariazarapuz@gmail.com'
   };
 
+  arrayHowdescription = [
+    this.msg.HOWDESCRIPTION1, this.msg.HOWDESCRIPTION2,
+    this.msg.HOWDESCRIPTION3, this.msg.HOWDESCRIPTION4,
+  ];
+
+  arrayWhydescriptonuser = [
+    this.msg.WHYDESCRIPTIONUSER1, this.msg.WHYDESCRIPTIONUSER2, this.msg.WHYDESCRIPTIONUSER3, this.msg.WHYDESCRIPTIONUSER4, this.msg.WHYDESCRIPTIONUSER5
+  ];
+
+  arrayWhyAdminDescription = [
+    this.msg.WHYADMINDESCRIPTION1, this.msg.WHYADMINDESCRIPTION2, this.msg.WHYADMINDESCRIPTION3, this.msg.WHYADMINDESCRIPTION4, this.msg.WHYADMINDESCRIPTION5
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

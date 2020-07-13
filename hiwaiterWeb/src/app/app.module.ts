@@ -15,8 +15,9 @@ import { SpaceComponent } from './components/space/space.component';
 import { ListTablesComponent } from './components/tables/list-tables/list-tables.component';
 import { CommonModule } from '@angular/common';
 import { TableDetailComponent } from './components/tables/table-detail/table-detail.component';
-import { BodyOrderComponent } from './components/tables/body-order/body-order.component';
+
 import { KitchenComponent } from './components/kitchen/kitchen/kitchen.component';
+import { BodyOrderComponent } from './components/shared/body-order/body-order.component';
 
 @NgModule({
   declarations: [
