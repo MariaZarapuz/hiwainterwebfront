@@ -1,112 +1,46 @@
 .container h2 {
   text-align: center;
-  margin-top: 110px;
+  margin-top: 100px;
   font-size: 40px;
-}
-
-.container div {
-  margin-top: 15px;
-}
-
-.container div .table {
-  background-color: white;
-  height: 200px;
-  border: 15px solid rgb(10, 9, 9);
-  cursor: pointer;
-}
-
-.container div div h5 {
-  text-align: center;
-  margin-top: 15px;
-  font-size: 23px;
   text-decoration: underline;
 }
 
-.container div div h3 {
+.statusOrder {
   text-align: center;
-  margin-top: 15px;
-  font-family: bodedo;
+}
+
+.btn {
+  margin: 10px;
+  padding: 15px;
 }
 
 .green {
   color: green;
 }
 
-.red {
+.tableNumber {
+  font-family: bodedo;
+  border: 1px solid white;
+}
+
+.colorRed {
   color: red;
-  animation-name: red;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-
-  -webkit-animation-name: red;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-
 }
 
-@keyframes red {
-  0% {
-    font-size: 100%;
-  }
-
-  50% {
-    font-size: 200%;
-  }
-
-  100% {
-    font-size: 150%;
-  }
+.red {
+  background-color: red;
+  color: black;
 }
 
-@-moz-keyframes red {
-  0% {
-    font-size: 100%;
-  }
-
-  50% {
-    font-size: 200%;
-  }
-
-  100% {
-    font-size: 150%;
-  }
-}
-
-@-webkit-keyframes red {
-  0% {
-    font-size: 100%;
-  }
-
-  50% {
-    font-size: 200%;
-  }
-
-  100% {
-    font-size: 150%;
-  }
-}
-
-.blue {
-  color: blue;
-
-}
-
-.yellow {
-  color: purple;
-}
-
-.orange {
+.colorOrange {
   color: orange;
   animation-name: orange;
-  animation-duration: 1s;
-  animation-timing-function: linear;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-
   -webkit-animation-name: orange;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: infinite;
 }
 
@@ -151,3 +85,67 @@
     opacity: 1.0;
   }
 }
+
+.white {
+  color: white;
+
+}
+
+.purple {
+  color: purple;
+}
+
+.orange {
+  color: orange;
+  /* animation-name: orange;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-name: orange;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite; */
+}
+
+/* @keyframes orange {
+  0% {
+    opacity: 1.0;
+  }
+
+  50% {
+    opacity: 0.0;
+  }
+
+  100% {
+    opacity: 1.0;
+  }
+}
+
+@-moz-keyframes orange {
+  0% {
+    opacity: 1.0;
+  }
+
+  50% {
+    opacity: 0.0;
+  }
+
+  100% {
+    opacity: 1.0;
+  }
+}
+
+@-webkit-keyframes orange {
+  0% {
+    opacity: 1.0;
+  }
+
+  50% {
+    opacity: 0.0;
+  }
+
+  100% {
+    opacity: 1.0;
+  }
+} */

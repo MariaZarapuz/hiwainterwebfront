@@ -18,6 +18,7 @@ import { TableDetailComponent } from './components/tables/table-detail/table-det
 import { BodyOrderComponent } from './components/tables/body-order/body-order.component';
 import { FormMenuComponent } from './components/menu/form-menu/form-menu.component';
 import { ListMenuComponent } from './components/menu/list-menu/list-menu.component';
+import { KitchenComponent } from './components/kitchen/kitchen/kitchen.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ListMenuComponent } from './components/menu/list-menu/list-menu.compone
     TableDetailComponent,
     BodyOrderComponent,
     FormMenuComponent,
-    ListMenuComponent
+    ListMenuComponent,
+    KitchenComponent
   ],
   imports: [
     CommonModule,

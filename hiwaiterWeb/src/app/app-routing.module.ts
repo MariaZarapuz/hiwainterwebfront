@@ -5,9 +5,8 @@ import { HomeComponent } from './components/home/home.component';
 import { SpaceComponent } from './components/space/space.component';
 import { ListTablesComponent } from './components/tables/list-tables/list-tables.component';
 import { TableDetailComponent } from './components/tables/table-detail/table-detail.component';
-import { pathToFileURL } from 'url';
 import { ListMenuComponent } from './components/menu/list-menu/list-menu.component';
-
+import { KitchenComponent } from './components/kitchen/kitchen/kitchen.component';
 
 
 const routes: Routes = [
@@ -17,7 +16,9 @@ const routes: Routes = [
   { path: 'listTables', component: ListTablesComponent },
   { path: 'tableDetail/:id', component: TableDetailComponent },
   { path: 'form-menu', component: FormMenuComponent },
-  { path: 'menu', component: ListMenuComponent }
+  { path: 'menu', component: ListMenuComponent },
+  { path: 'kitchen', component: KitchenComponent },
+
 
 
 
