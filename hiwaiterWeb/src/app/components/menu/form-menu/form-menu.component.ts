@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormMenuComponent implements OnInit {
 
-  mode = 'none';
+  mode: any;
 
   constructor() { }
 
