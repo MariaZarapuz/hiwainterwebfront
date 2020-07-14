@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListMenuComponent implements OnInit {
 
+  plato: {
+    imagen: 'src/jkdjfkjfsa',
+    name: 'mndsfnsdmfn',
+    alergenos: {
+      gluten: true,
+      marisco: false,
+    }
+  }
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,20 +1,20 @@
 <div class="container wrapper">
   <h2 class="subTittle">Insertar Plato</h2>
-  <div class="row">
+  <form [formGroup]="form" (ngSubmit)="sendFormMenu()" class="row">
     <div class="col-6">
       <div class="form-group">
         <label class="col-12" for="">Imagen</label>
-        <input type="text" name="" id="">
+        <input type="text" class="form-control" id="" formControlName="img">
       </div>
       <div class="form-group">
         <label class="col-12">Categoria</label>
-        <select name="" id="">
-          <option value="">Entrantes</option>
-          <option value="">Hambuerguesas</option>
-          <option value="">Bocadillos</option>
-          <option value="">Sandwich</option>
-          <option value="">Postres</option>
-          <option value="">Bebida</option>
+        <select name="" class="form-control" id="" formControlName="category">
+          <option value="inbound">Entrantes</option>
+          <option value="burguer">Hambuerguesas</option>
+          <option value="salad">Ensaladas</option>
+          <option value="sandwich">Sandwich</option>
+          <option value="desert">Postres</option>
+          <option value="drink">Bebida</option>
         </select>
       </div>
       <!--   <div>
@@ -29,31 +29,28 @@
     <div class="col-6">
       <div class="form-group">
         <label class="col-12">Nombre</label>
-        <input type="text" name="" id="">
+        <input type="text" class="form-control" id="" formControlName="name">
       </div>
       <div class="form-group">
         <label class="col-12">Precio</label>
-        <input type="text" name="" id="">
+        <input type="text" class="form-control" id="" formControlName="price">
       </div>
-
     </div>
-  </div>
-  <div class="form-group">
-    <label>Alergenos</label>
-    <div class="row">
-      <div class="col-2 modifyCol2 form-group" *ngFor="let allengen of arrayAllergens">
-
-        <div class="row">
-          <input type="checkbox" class="form-check-input col-6" name="">
-          <img class="col-6" src="{{allengen.icon}}" alt="{{allengen.name}}" title="{{allengen.name}}">
-
-
+    <div class="form-group">
+      <label>Alergenos</label>
+      <div class="row">
+        <div class="col-2 modifyCol2 form-group" *ngFor="let allengen of arrayAllergens">
+          <div class="row">
+            <input type="checkbox" class="form-check-input col-6" formControlName="{{allengen.name}}">
+            <img class="col-6" src="{{allengen.icon}}" alt="{{allengen.name}}" title="{{allengen.name}}">
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label class="col-12" for="">Descripcion</label>
-    <textarea class="col-12" name="" id="" cols="30" rows="10"></textarea>
-  </div>
+    <div class="form-group">
+      <label class="col-12" for="">Descripcion</label>
+      <textarea class="col-12" id="" cols="30" rows="10" formControlName="description"></textarea>
+    </div>
+    <button class="btn btrn-warnning">Guardar</button>
+  </form>
 </div>
