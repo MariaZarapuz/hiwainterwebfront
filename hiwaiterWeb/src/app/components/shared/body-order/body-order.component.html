@@ -1,13 +1,12 @@
 <div *ngFor="let array of arrayCategory">
 
-  <div *ngIf="array.name!=='drink'">
-    <p *ngFor="let order of item[array.name]" [ngClass]="{'none': order.served !== served, 'show': mode==='kitchen'}">
+  <div *ngIf="array.name!=='drink' && mode==='kitchen'">
+    <p *ngFor="let order of item[array.name]"
+      [ngClass]="{'none': order.served !== served, 'show': mode==='kitchen','underline': order.state === msg.PREPARED}">
 
       <img src="../../../../assets/imagenes/{{array.icons}}.png" alt="{{array.icons}}" title="{{array.icons}}">
       {{order.name}}
       <span>x{{order.quantity}}</span>
-      <img class="tick" [ngClass]="{'none': order.state === msg.NOPREPARED}" src="../../../../assets/imagenes/listo.png"
-        alt="">
 
     </p>
   </div>

@@ -24,3 +24,7 @@
   background-color: rgb(255, 184, 5);
 
 }
+
+a {
+  cursor: pointer;
+}

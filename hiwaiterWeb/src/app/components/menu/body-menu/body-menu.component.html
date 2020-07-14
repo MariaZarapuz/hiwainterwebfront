@@ -1,0 +1,64 @@
+<div *ngIf="mode==='drink'">
+  <h2 class="subtittle">Insertar Bebida</h2>
+  <div>
+    <select name="" id="">
+      <option value="">Refrescos</option>
+      <option value="">Cervezas</option>
+      <option value="">Vinos</option>
+      <option value="">Coctel</option>
+    </select>
+  </div>
+</div>
+<div *ngIf="mode==='plate'">
+  <h2 class="subtittle">Insertar Plato</h2>
+  <div class="row">
+    <div class="col-6">
+      <div class="form-group">
+        <label class="col-12" for="">Imagen</label>
+        <input type="file" name="" id="">
+        <img [src]=url alt="">
+      </div>
+      <div class="form-group">
+        <label class="col-12">Categoria</label>
+        <select name="">
+          <option value="">Entrantes</option>
+          <option value="">Hambuerguesas</option>
+          <option value="">Bocadillos</option>
+          <option value="">Sandwich</option>
+          <option value="">Postres</option>
+          <option value="">Bebida</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label class="col-12">Nombre</label>
+        <input type="text" name="" id="">
+      </div>
+      <div class="form-group">
+        <label class="col-12">Precio</label>
+        <input type="text" name="" id="">
+      </div>
+
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Alergenos</label>
+    <div class="row">
+      <div class="col-2 modifyCol2 form-group" *ngFor="let allengen of arrayAllergens">
+
+        <div class="row">
+          <input type="checkbox" class="form-check-input col-6" name="">
+          <img class="col-6" src="{{allengen.icon}}" alt="{{allengen.name}}" title="{{allengen.name}}">
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-12" for="">Descripcion</label>
+    <textarea class="col-12" name="" id="" cols="30" rows="10"></textarea>
+  </div>
+</div>

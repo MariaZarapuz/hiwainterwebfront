@@ -53,3 +53,7 @@ span {
 .show {
   display: block;
 }
+
+.underline {
+  text-decoration: line-through;
+}

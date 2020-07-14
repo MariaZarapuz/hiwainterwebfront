@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalConstants } from 'src/app/constantsGlobal';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,7 @@ export class HeaderComponent implements OnInit {
     MENU: GlobalConstants.MENU
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.getLocalstorage();
@@ -25,6 +26,14 @@ export class HeaderComponent implements OnInit {
   getLocalstorage() {
     const tokenExist = localStorage.getItem('token');
     return tokenExist;
-
   }
+
+  navigate() {
+    if (this.getLocalstorage()) {
+      this.router.navigate(['/space']);
+    } else {
+      this.router.navigate(['/home']);
+    }
+  }
+
 }

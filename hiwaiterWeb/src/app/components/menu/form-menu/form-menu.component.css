@@ -1,16 +1,19 @@
-.wrapper{
-  margin-top: 300px;
-}
-.modifyCol2{
-  flex: 0 0 16.666667%;
-  max-width: 13.666667%;
-  margin: 1em auto;
-}
-.form-check-input{
-margin-left: -0.75em;
+.bigbutton {
+  background-color: white;
+  font-family: bodedo;
+  padding: 22px 84px;
+  margin: 50px auto;
+  font-size: 50px;
 }
 
-img{
-  margin-left: 1.75em;
+.wrapper {
+  margin-top: 375px;
 }
 
+.up {
+  margin-top: 0px;
+}
+
+.none {
+  display: none;
+}

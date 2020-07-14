@@ -1,6 +1,6 @@
 <!-- Image and text -->
 <nav class=" navbar fixed-top">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" (click)="navigate()">
     <h1 class="title">Hi Waiter!!!</h1>
   </a>
   <div *ngIf=" getLocalstorage() === null ">
