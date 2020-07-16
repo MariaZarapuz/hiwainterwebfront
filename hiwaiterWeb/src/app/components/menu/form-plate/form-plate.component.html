@@ -1,13 +1,4 @@
-<div *ngIf="mode==='drink'">
-  <h2 class="subtittle">Insertar Bebida</h2>
-  <div>
-    <select formControlName="typeDrink">
-      <option value="">Seleciona un tipo de bebida</option>
-      <option *ngFor="let type of arrayTypeDrink" [value]=type>{{type}}</option>
-    </select>
-  </div>
-</div>
-<div *ngIf="mode==='plate'">
+<div>
   <h2 class="subtittle">Insertar Plato</h2>
   <div>
     <form [formGroup]="formPlate" (ngSubmit)="sendFormMenu()" class="row">
@@ -22,15 +13,6 @@
           </div>
         </div>
 
-        <div class="col-4">
-          <div class=" form-group">
-            <div>
-              <label>Precio</label>
-            </div>
-            <input formControlName="price" type="text" placeholder="Precio del plato">
-          </div>
-        </div>
-
         <div class=" col-4">
           <div class="form-group">
             <div>
@@ -40,6 +22,15 @@
               <option value="">Seleciona un tipo de plato</option>
               <option *ngFor="let type of arrayTypeFood" [value]=type n>{{type}}</option>
             </select>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class=" form-group">
+            <div>
+              <label>Precio</label>
+            </div>
+            <input formControlName="price" type="number" placeholder="Precio del plato">
           </div>
         </div>
 
@@ -78,3 +69,4 @@
       </button>
     </form>
   </div>
+</div>

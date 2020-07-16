@@ -1,0 +1,44 @@
+<div>
+  <h2 class="subtittle">Insertar Bebida</h2>
+  <div>
+    <form [formGroup]="formDrink" (ngSubmit)="sendFormDrink()" class="row">
+
+      <div class="row col-12 text-center">
+        <div class="col-4">
+          <div>
+            <label for="name">Nombre</label>
+          </div>
+          <input formControlName="name" type="text">
+        </div>
+        <div class="col-4">
+          <div>
+            <label for="type">Tipo de bebida</label>
+          </div>
+          <select formControlName="type">
+            <option value="">Seleciona un tipo de bebida</option>
+            <option *ngFor="let type of arrayTypeDrink" [value]=type>{{type}}</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <div>
+            <label for="price">Precio</label>
+          </div>
+          <input formControlName="price" type="number">
+        </div>
+
+      </div>
+
+      <div class="form-group col-12">
+        <div>
+          <label for="">Descripcion</label>
+        </div>
+        <textarea formControlName="description" cols=" 70" rows="10"></textarea>
+      </div>
+
+      <button class="btn save" type="submit">
+        Enviar
+      </button>
+
+    </form>
+  </div>
+</div>

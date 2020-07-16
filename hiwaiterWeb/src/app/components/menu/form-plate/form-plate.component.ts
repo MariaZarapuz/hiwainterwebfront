@@ -1,25 +1,21 @@
-import { Component, OnInit, platformCore, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { MenuService } from 'src/app/services/menu/menu.service';
 import { debounceTime } from 'rxjs/operators';
+import { MenuService } from 'src/app/services/menu/menu.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-body-menu',
-  templateUrl: './body-menu.component.html',
-  styleUrls: ['./body-menu.component.css']
+  selector: 'app-form-plate',
+  templateUrl: './form-plate.component.html',
+  styleUrls: ['./form-plate.component.css']
 })
-export class BodyMenuComponent implements OnInit {
+export class FormPlateComponent implements OnInit {
 
   formPlate: FormGroup;
   @Input() mode;
 
   arrayTypeFood = [
-    'Entrantes', 'Hamburguesas', 'Bocadillos', 'Sandwich', 'Postres', 'Bebida'
-  ];
-
-  arrayTypeDrink = [
-    'Refresco', 'Cerveza', 'Vino', 'Coctel'
+    'Entrantes', 'Hamburguesas', 'Bocadillos', 'Sandwich', 'Postres'
   ];
 
   arrayAllergens = [
@@ -95,14 +91,11 @@ export class BodyMenuComponent implements OnInit {
     }
 
   ];
-
-  url: string;
   imageUrl: any;
-
   constructor(
     private menuService: MenuService,
     private sanitization: DomSanitizer) {
-    this.imageUrl = "";
+    this.imageUrl = '';
     this.formPlate = new FormGroup({
       name: new FormControl(''),
       price: new FormControl(''),
@@ -132,8 +125,8 @@ export class BodyMenuComponent implements OnInit {
 
   sendFormMenu() {
     let plate = this.formPlate.value;
-    plate = this.changeFalseOrTrue(plate)
-    plate = this.createObjectMenu(plate)
+    plate = this.changeFalseOrTrue(plate);
+    plate = this.createObjectMenu(plate);
     this.menuService.insertPlate(plate);
   }
 
@@ -186,4 +179,5 @@ export class BodyMenuComponent implements OnInit {
       console.log(this.imageUrl);
     });
   }
+
 }

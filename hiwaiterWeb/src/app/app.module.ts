@@ -19,7 +19,8 @@ import { FormMenuComponent } from './components/menu/form-menu/form-menu.compone
 import { ListMenuComponent } from './components/menu/list-menu/list-menu.component';
 import { KitchenComponent } from './components/kitchen/kitchen/kitchen.component';
 import { BodyOrderComponent } from './components/shared/body-order/body-order.component';
-import { BodyMenuComponent } from './components/menu/body-menu/body-menu.component';
+import { FormPlateComponent } from './components/menu/form-plate/form-plate.component';
+import { FormDrinkComponent } from './components/menu/form-drink/form-drink.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { BodyMenuComponent } from './components/menu/body-menu/body-menu.compone
     FormMenuComponent,
     ListMenuComponent,
     KitchenComponent,
-    BodyMenuComponent
+    FormPlateComponent,
+    FormDrinkComponent
   ],
   imports: [
     CommonModule,

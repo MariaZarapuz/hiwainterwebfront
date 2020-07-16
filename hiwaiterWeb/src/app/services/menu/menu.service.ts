@@ -5,11 +5,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MenuService {
-  url = 'http://localhost:3000/api/plates';
+  urlPlate = 'http://localhost:3000/api/plates';
+  urlDrink = 'http://localhost:3000/api/drink';
+
   constructor(private httpClient: HttpClient) { }
 
   insertPlate(plate) {
     console.log(plate)
-    this.httpClient.post(`${this.url}/add`, plate).toPromise();
+    this.httpClient.post(`${this.urlPlate}/add`, plate).toPromise();
+  }
+
+  insertDrink(drink) {
+    console.log(drink)
+    this.httpClient.post(`${this.urlDrink}/add`, drink).toPromise();
   }
 }
