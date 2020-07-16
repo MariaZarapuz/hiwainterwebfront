@@ -1,6 +1,8 @@
 import { Component, OnInit, platformCore, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { MenuService } from 'src/app/services/menu/menu.service';
+import { debounceTime } from 'rxjs/operators';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-body-menu',
@@ -9,74 +11,99 @@ import { MenuService } from 'src/app/services/menu/menu.service';
 })
 export class BodyMenuComponent implements OnInit {
 
-  form: FormGroup;
+  formPlate: FormGroup;
   @Input() mode;
 
+  arrayTypeFood = [
+    'Entrantes', 'Hamburguesas', 'Bocadillos', 'Sandwich', 'Postres', 'Bebida'
+  ];
+
+  arrayTypeDrink = [
+    'Refresco', 'Cerveza', 'Vino', 'Coctel'
+  ];
 
   arrayAllergens = [
     {
-      name: 'Gluten',
+      name: 'gluten',
+      translate: 'Gluten',
       icon: '../../../../assets/imagenes/gluten .png'
     },
     {
-      name: 'Crustáceo',
+      name: 'crustacean',
+      translate: 'Crustáceo',
       icon: '../../../../assets/imagenes/crustaceo.png'
     },
     {
-      name: 'Huevos',
+      name: 'egg',
+      translate: 'Huevos',
       icon: '../../../../assets/imagenes/huevo.png'
     },
     {
-      name: 'Pescado',
+      name: 'fish',
+      translate: 'Pescado',
       icon: '../../../../assets/imagenes/fish.png'
     },
     {
-      name: 'Cacahuete',
+      name: 'penaut',
+      translate: 'Cacahuete',
       icon: '../../../../assets/imagenes/peanut.png'
     },
     {
-      name: 'Soja',
+      name: 'soya',
+      translate: 'Soja',
       icon: '../../../../assets/imagenes/soja.png'
     },
     {
-      name: 'Lacteos',
+      name: 'lactose',
+      translate: 'Lacteos',
       icon: '../../../../assets/imagenes/lacteos.png'
     },
     {
-      name: 'Frutos cascara',
+      name: 'nuts',
+      translate: 'Frutos cascara',
       icon: '../../../../assets/imagenes/nut.png'
     },
     {
-      name: 'Apio',
+      name: 'celery',
+      translate: 'Apio',
       icon: '../../../../assets/imagenes/apio.png'
     },
     {
-      name: 'Mostaza',
+      name: 'mustard',
+      translate: 'Mostaza',
       icon: '../../../../assets/imagenes/mostaza.png'
     },
     {
-      name: 'Granos de sésamo',
+      name: 'sesame',
+      translate: 'Granos de sésamo',
       icon: '../../../../assets/imagenes/sesamo.png'
     },
     {
-      name: 'Dióxido de azufre y sulfito',
+      name: 'gmo',
+      translate: 'Dióxido de azufre y sulfito',
       icon: '../../../../assets/imagenes/gmo.png'
     },
     {
-      name: 'Moluscos',
+      name: 'mollusks',
+      translate: 'Moluscos',
       icon: '../../../../assets/imagenes/moluscos.png'
     },
     {
-      name: 'Altramuces',
+      name: 'lupin',
+      translate: 'Altramuces',
       icon: '../../../../assets/imagenes/lupin.png'
     }
 
   ];
 
   url: string;
+  imageUrl: any;
 
-  constructor(private menuService: MenuService) {
-    this.form = new FormGroup({
+  constructor(
+    private menuService: MenuService,
+    private sanitization: DomSanitizer) {
+    this.imageUrl = "";
+    this.formPlate = new FormGroup({
       name: new FormControl(''),
       price: new FormControl(''),
       img: new FormControl(''),
@@ -104,7 +131,7 @@ export class BodyMenuComponent implements OnInit {
   }
 
   sendFormMenu() {
-    let plate = this.form.value;
+    let plate = this.formPlate.value;
     plate = this.changeFalseOrTrue(plate)
     plate = this.createObjectMenu(plate)
     this.menuService.insertPlate(plate);
@@ -149,5 +176,14 @@ export class BodyMenuComponent implements OnInit {
       }
     }
     return plate;
+  }
+
+  showImageInput() {
+    const imgValue = this.formPlate.controls.img;
+    imgValue.valueChanges.pipe(debounceTime(1000)).subscribe(value => {
+      this.imageUrl = this.sanitization.bypassSecurityTrustUrl(value);
+
+      console.log(this.imageUrl);
+    });
   }
 }

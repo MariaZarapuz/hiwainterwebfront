@@ -1,66 +1,80 @@
 <div *ngIf="mode==='drink'">
   <h2 class="subtittle">Insertar Bebida</h2>
   <div>
-    <select name="" id="">
-      <option value="">Refrescos</option>
-      <option value="">Cervezas</option>
-      <option value="">Vinos</option>
-      <option value="">Coctel</option>
+    <select formControlName="typeDrink">
+      <option value="">Seleciona un tipo de bebida</option>
+      <option *ngFor="let type of arrayTypeDrink" [value]=type>{{type}}</option>
     </select>
   </div>
 </div>
 <div *ngIf="mode==='plate'">
   <h2 class="subtittle">Insertar Plato</h2>
-  <div class="row">
-    <form [formGroup]="form" (ngSubmit)="sendFormMenu()" class="row">
-      <div class="col-6">
-        <div class="form-group">
-          <label class="col-12" for="">Imagen</label>
-          <input type="file" name="" id="">
-          <img [src]=url alt="">
+  <div>
+    <form [formGroup]="formPlate" (ngSubmit)="sendFormMenu()" class="row">
+      <div class="row col-12">
+
+        <div class="col-4">
+          <div class="form-group">
+            <div>
+              <label>Nombre</label>
+            </div>
+            <input formControlName="name" type="text" placeholder="Nombre del plato">
+          </div>
         </div>
-        <div class="form-group">
-          <label class="col-12">Categoria</label>
-          <select name="">
-            <option value="">Entrantes</option>
-            <option value="">Hambuerguesas</option>
-            <option value="">Bocadillos</option>
-            <option value="">Sandwich</option>
-            <option value="">Postres</option>
-            <option value="">Bebida</option>
-          </select>
+
+        <div class="col-4">
+          <div class=" form-group">
+            <div>
+              <label>Precio</label>
+            </div>
+            <input formControlName="price" type="text" placeholder="Precio del plato">
+          </div>
+        </div>
+
+        <div class=" col-4">
+          <div class="form-group">
+            <div>
+              <label>Categoria</label>
+            </div>
+            <select formControlName="category" name="">
+              <option value="">Seleciona un tipo de plato</option>
+              <option *ngFor="let type of arrayTypeFood" [value]=type n>{{type}}</option>
+            </select>
+          </div>
         </div>
 
       </div>
-      <div class="col-6">
-        <div class="form-group">
-          <label class="col-12">Nombre</label>
-          <input type="text" name="" id="">
+      <div class="form-group text-center">
+        <div>
+          <label>Alergenos</label>
         </div>
-        <div class="form-group">
-          <label class="col-12">Precio</label>
-          <input type="text" name="" id="">
-        </div>
-
-      </div>
-
-      <div class="form-group">
-        <label>Alergenos</label>
         <div class="row">
-          <div class="col-2 modifyCol2 form-group" *ngFor="let allengen of arrayAllergens">
+          <div class="col-6 modifyCol2 form-group" *ngFor="let allengen of arrayAllergens">
+            <div>
 
-            <div class="row">
-              <input type="checkbox" class="form-check-input col-6" name="">
-              <img class="col-6" src="{{allengen.icon}}" alt="{{allengen.name}}" title="{{allengen.name}}">
-
+              <input formControlName="{{allengen.name}}" type="checkbox" class="form-check-input col-5">
+              <p class="col-7">{{allengen.translate}}</p>
 
             </div>
           </div>
         </div>
       </div>
-      <div class="form-group">
-        <label class="col-12" for="">Descripcion</label>
-        <textarea class="col-12" name="" id="" cols="30" rows="10"></textarea>
+
+      <div class="form-group col-12">
+        <div>
+          <label for="">Descripcion</label>
+        </div>
+        <textarea formControlName="description" cols=" 70" rows="10"></textarea>
       </div>
+
+      <div class="form-group col-12">
+        <div class="text-center ">
+          <label for="">Imagen</label>
+        </div>
+        <input formControlName="img" type="file">
+      </div>
+      <button class="btn save" type="submit">
+        Enviar
+      </button>
     </form>
   </div>
