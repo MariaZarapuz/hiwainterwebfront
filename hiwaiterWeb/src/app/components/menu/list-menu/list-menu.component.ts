@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from 'src/app/services/menu/menu.service';
+import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-list-menu',
@@ -7,6 +8,7 @@ import { MenuService } from 'src/app/services/menu/menu.service';
   styleUrls: ['./list-menu.component.css']
 })
 export class ListMenuComponent implements OnInit {
+  listProducts: any;
 
   // listProducts = {
   //   plate: [{ name: 'burger', active: 0 }],
@@ -15,10 +17,12 @@ export class ListMenuComponent implements OnInit {
   constructor(private menuService: MenuService) { }
 
   ngOnInit(): void {
+    this.getAllMenu();
   }
+  async getAllMenu() {
+    this.listProducts = await this.menuService.getMenu();
+    console.log(this.listProducts)
 
-  getAllMenu() {
-    this.listProducts = this.menuService.getMenu();
   }
 
 }
