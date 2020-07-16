@@ -1,0 +1,41 @@
+span,
+p {
+  font-family: bodedo;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.insert {
+  margin-right: 50px;
+}
+
+p {
+  text-decoration: underline;
+  font-size: 25px;
+}
+
+.btn {
+  background-color: gold;
+
+}
+
+.product {
+  padding: 20px 0px;
+}
+
+.active {
+  height: 25px;
+  margin: 6px 0px;
+}
+
+h3 {
+  margin: 20px 0px;
+}
+
+hr {
+  background-color: white;
+}

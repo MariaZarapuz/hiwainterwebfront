@@ -7,18 +7,20 @@ import { MenuService } from 'src/app/services/menu/menu.service';
   styleUrls: ['./list-menu.component.css']
 })
 export class ListMenuComponent implements OnInit {
+  // listProducts: any;
 
-  // listProducts = {
-  //   plate: [{ name: 'burger', active: 0 }],
-  //   drinks: [{ name: 'Coca-cola', active: 1 }]
-  // };
+  listProducts = {
+    plates: [{ name: 'Burger', active: 1, id: 1 }, { name: 'Nuggets', active: 0, id: 2 }],
+    drinks: [{ name: 'Coca-cola', active: 1, id: 1 }]
+  };
   constructor(private menuService: MenuService) { }
 
   ngOnInit(): void {
+    // this.getAllMenu();
   }
 
-  getAllMenu() {
-    this.listProducts = this.menuService.getMenu();
-  }
+  // async getAllMenu() {
+  //   this.listProducts = await this.menuService.getMenu();
+  // }
 
 }

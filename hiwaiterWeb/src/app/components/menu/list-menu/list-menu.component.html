@@ -6,22 +6,40 @@
   <div>
     <h3>Platos</h3>
     <div>
-      <span *ngFor="let products of listProducts.plate">{{products.name}}</span>
-      <input type="checkbox">
+      <div class="row">
+        <p class="col-8">Nombre</p>
+        <p class="col-2 text-center">Activo</p>
+
+      </div>
+      <div class="row product" *ngFor="let product of listProducts.plates">
+        <span class="col-8">{{product.name}}</span>
+        <input class="col-2 active" id="{{product.id}}" type="checkbox" value="{{product.active}}"
+          [checked]="product.active">
+        <button class="col-2 btn">Modificar</button>
+      </div>
     </div>
-  </div>
 
-  <div>
-    <h3>Bebidas</h3>
-    <div *ngFor="let product of listProducts.drinks">
-      <span>{{product.name}} </span>
-      <input type="checkbox" value="{{product.active}}" checked="product.active">
+    <div>
+      <h3>Bebidas</h3>
+      <div>
+        <div class="row">
+          <p class="col-8">Nombre</p>
+          <p class="col-2 text-center">Activo</p>
 
+        </div>
+        <div class="row product" *ngFor="let product of listProducts.drinks">
+          <span class="col-8">{{product.name}}</span>
+          <input class="col-2 active" id="{{product.id}}" type="checkbox" value="{{product.active}}"
+            [checked]="product.active">
+          <button class="col-2 btn">Modificar</button>
+        </div>
+      </div>
     </div>
+    <hr>
+    <div class="wrapper">
+      <button class="btn insert" [routerLink]="['./form-menu']">Insertar plato</button>
+
+      <button class="btn" [routerLink]="['./form-menu']">Insertar bebida</button>
+    </div>
+
   </div>
-
-
-
-  <button class="btn btn-primary " [routerLink]="['./form-menu']">Insertar; plato</button>
-
-</div>;
