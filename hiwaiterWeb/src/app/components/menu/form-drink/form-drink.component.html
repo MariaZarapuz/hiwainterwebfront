@@ -1,5 +1,7 @@
 <div>
-  <h2 class="subtittle">Insertar Bebida</h2>
+  <h2 *ngIf="modify!=='modify'" class="subtittle">Insertar Bebida</h2>
+  <h2 *ngIf="modify==='modify'" class="subtittle">Modifica tu bebida</h2>
+
   <div>
     <form [formGroup]="formDrink" (ngSubmit)="sendFormDrink()" class="row">
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { MenuService } from 'src/app/services/menu/menu.service';
 
@@ -9,6 +9,8 @@ import { MenuService } from 'src/app/services/menu/menu.service';
   styleUrls: ['./form-drink.component.css']
 })
 export class FormDrinkComponent implements OnInit {
+
+  @Input() modify;
 
   formDrink: FormGroup;
 
@@ -27,6 +29,7 @@ export class FormDrinkComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.modify)
   }
 
   sendFormDrink() {

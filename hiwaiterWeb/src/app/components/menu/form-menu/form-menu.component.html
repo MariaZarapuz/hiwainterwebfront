@@ -6,6 +6,6 @@
       <button (click)="showDrinkOrPlate('plate',$event)" class="btn bigbutton">Plato</button>
     </div>
   </div>
-  <app-form-drink *ngIf="mode==='drink'"></app-form-drink>
+  <app-form-drink [modify]='"read"' *ngIf="mode==='drink'"></app-form-drink>
   <app-form-plate *ngIf="mode==='plate'"></app-form-plate>
 </div>

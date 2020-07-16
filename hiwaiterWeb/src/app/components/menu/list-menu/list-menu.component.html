@@ -11,10 +11,10 @@
         <p class="col-2 text-center">Activo</p>
 
       </div>
-      <div class="row product" *ngFor="let product of listProducts.plates">
+      <div class="row product" *ngFor="let product of listProducts?.plates">
         <span class="col-8">{{product.name}}</span>
         <input class="col-2 active" id="{{product.id}}" type="checkbox" value="{{product.active}}"
-          [checked]="product.active">
+          (click)="activeOrNoActive(product.id,product.active,'plates')" [checked]="product.active">
         <button class="col-2 btn">Modificar</button>
       </div>
     </div>
@@ -27,11 +27,11 @@
           <p class="col-2 text-center">Activo</p>
 
         </div>
-        <div class="row product" *ngFor="let product of listProducts.drinks">
+        <div class="row product" *ngFor="let product of listProducts?.drinks">
           <span class="col-8">{{product.name}}</span>
           <input class="col-2 active" id="{{product.id}}" type="checkbox" value="{{product.active}}"
-            [checked]="product.active">
-          <button class="col-2 btn">Modificar</button>
+            (click)="activeOrNoActive(product.id,product.active,'drink')" [checked]="product.active">
+          <button class="col-2 btn" [routerLink]="['./form-menu/modify',product.id]">Modificar</button>
         </div>
       </div>
     </div>

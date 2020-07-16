@@ -7,21 +7,27 @@ import { Injectable } from '@angular/core';
 export class MenuService {
   urlPlate = 'http://localhost:3000/api/plates';
   urlDrink = 'http://localhost:3000/api/drinks';
-  urlMenu = 'http://localhost:3000/api/menu'
+  urlMenu = 'http://localhost:3000/api/menu';
 
   constructor(private httpClient: HttpClient) { }
 
   insertPlate(plate) {
-    console.log(plate)
     this.httpClient.post(`${this.urlPlate}/add`, plate).toPromise();
   }
 
   insertDrink(drink) {
-    console.log(drink)
     this.httpClient.post(`${this.urlDrink}/add`, drink).toPromise();
   }
 
   getMenu() {
     return this.httpClient.get(`${this.urlMenu}/listProducts`).toPromise();
+  }
+
+  activeOrNoActiveDrink(id, active) {
+    this.httpClient.put(`${this.urlDrink}/updateActive`, { active, id }).toPromise();
+  }
+  activeOrNoActivePlaces(id, active) {
+    this.httpClient.put(`${this.urlPlate}/updateActive`, { active, id }).toPromise();
+
   }
 }

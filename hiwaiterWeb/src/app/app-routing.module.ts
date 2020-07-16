@@ -7,6 +7,7 @@ import { TableDetailComponent } from './components/tables/table-detail/table-det
 import { FormMenuComponent } from './components/menu/form-menu/form-menu.component';
 import { ListMenuComponent } from './components/menu/list-menu/list-menu.component';
 import { KitchenComponent } from './components/kitchen/kitchen/kitchen.component';
+import { FormModifyComponent } from './components/menu/form-modify/form-modify.component';
 
 
 const routes: Routes = [
@@ -15,9 +16,11 @@ const routes: Routes = [
   { path: 'space', component: SpaceComponent },
   { path: 'listTables', component: ListTablesComponent },
   { path: 'tableDetail/:id', component: TableDetailComponent },
-  { path: 'menu/form-menu', component: FormMenuComponent },
   { path: 'menu', component: ListMenuComponent },
+  { path: 'menu/form-menu', component: FormMenuComponent },
+  { path: 'menu/form-menu/modify/:id', component: FormModifyComponent },
   { path: 'kitchen', component: KitchenComponent },
+
 
 
 

@@ -21,6 +21,7 @@ import { KitchenComponent } from './components/kitchen/kitchen/kitchen.component
 import { BodyOrderComponent } from './components/shared/body-order/body-order.component';
 import { FormPlateComponent } from './components/menu/form-plate/form-plate.component';
 import { FormDrinkComponent } from './components/menu/form-drink/form-drink.component';
+import { FormModifyComponent } from './components/menu/form-modify/form-modify.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FormDrinkComponent } from './components/menu/form-drink/form-drink.comp
     ListMenuComponent,
     KitchenComponent,
     FormPlateComponent,
-    FormDrinkComponent
+    FormDrinkComponent,
+    FormModifyComponent
   ],
   imports: [
     CommonModule,
