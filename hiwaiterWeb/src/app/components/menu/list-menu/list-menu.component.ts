@@ -18,9 +18,11 @@ export class ListMenuComponent implements OnInit {
   ngOnInit(): void {
     // this.getAllMenu();
   }
+  async getAllMenu() {
 
-  // async getAllMenu() {
-  //   this.listProducts = await this.menuService.getMenu();
-  // }
+    // async getAllMenu() {
+    //   this.listProducts = await this.menuService.getMenu();
+    // }
 
+  }
 }
