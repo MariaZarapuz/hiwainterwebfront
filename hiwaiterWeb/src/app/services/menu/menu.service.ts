@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class MenuService {
   urlPlate = 'http://localhost:3000/api/plates';
-  urlDrink = 'http://localhost:3000/api/drink';
+  urlDrink = 'http://localhost:3000/api/drinks';
+  urlMenu = 'http://localhost:3000/api/menu'
 
   constructor(private httpClient: HttpClient) { }
 
@@ -18,5 +19,9 @@ export class MenuService {
   insertDrink(drink) {
     console.log(drink)
     this.httpClient.post(`${this.urlDrink}/add`, drink).toPromise();
+  }
+
+  getMenu() {
+    return this.httpClient.get(`${this.urlMenu}/listProducts`).toPromise();
   }
 }

@@ -1,1 +1,27 @@
-<button class="btn btn-primary " [routerLink]="['./form-menu']">Insertar plato</button>
+<div class="container">
+  <h2 class="subtittle">
+    Lista de platos y bebidas.
+  </h2>
+
+  <div>
+    <h3>Platos</h3>
+    <div>
+      <span *ngFor="let products of listProducts.plate">{{products.name}}</span>
+      <input type="checkbox">
+    </div>
+  </div>
+
+  <div>
+    <h3>Bebidas</h3>
+    <div *ngFor="let product of listProducts.drinks">
+      <span>{{product.name}} </span>
+      <input type="checkbox" value="{{product.active}}" checked="product.active">
+
+    </div>
+  </div>
+
+
+
+  <button class="btn btn-primary " [routerLink]="['./form-menu']">Insertar; plato</button>
+
+</div>;

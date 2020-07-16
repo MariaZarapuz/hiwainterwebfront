@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from 'src/app/services/menu/menu.service';
 
 @Component({
   selector: 'app-list-menu',
@@ -7,18 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListMenuComponent implements OnInit {
 
-  plato: {
-    imagen: 'src/jkdjfkjfsa',
-    name: 'mndsfnsdmfn',
-    alergenos: {
-      gluten: true,
-      marisco: false,
-    }
-  }
-
-  constructor() { }
+  // listProducts = {
+  //   plate: [{ name: 'burger', active: 0 }],
+  //   drinks: [{ name: 'Coca-cola', active: 1 }]
+  // };
+  constructor(private menuService: MenuService) { }
 
   ngOnInit(): void {
+  }
+
+  getAllMenu() {
+    this.listProducts = this.menuService.getMenu();
   }
 
 }
