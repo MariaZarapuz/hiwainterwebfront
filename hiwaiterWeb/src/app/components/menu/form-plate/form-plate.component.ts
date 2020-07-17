@@ -3,7 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 import { MenuService } from 'src/app/services/menu/menu.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-plate',
@@ -99,6 +99,7 @@ export class FormPlateComponent implements OnInit {
   category: any;
 
   constructor(
+    private router: Router,
     private activatedRouter: ActivatedRoute,
     private menuService: MenuService,
     private sanitization: DomSanitizer) {
@@ -222,8 +223,8 @@ export class FormPlateComponent implements OnInit {
   formModify() {
     let form = this.formPlate.value;
     form = this.changeFalseOrTrue(form);
-
     this.menuService.formModify(this.id, form);
+    this.router.navigate(['/menu']);
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from 'src/app/services/menu/menu.service';
-import { ClassGetter } from '@angular/compiler/src/output/output_ast';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-list-menu',
@@ -8,6 +8,10 @@ import { ClassGetter } from '@angular/compiler/src/output/output_ast';
   styleUrls: ['./list-menu.component.css']
 })
 export class ListMenuComponent implements OnInit {
+
+  faTrash = faTrash;
+
+
   listProducts: any;
   activeOrNoActiveDate: any;
 
@@ -30,4 +34,9 @@ export class ListMenuComponent implements OnInit {
     }
   }
 
+  async deleteProduct(id, category) {
+    this.listProducts = await this.menuService.deletectProduct(id, category);
+  }
 }
+
+

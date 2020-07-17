@@ -45,4 +45,12 @@ export class MenuService {
       this.httpClient.put(`${this.urlPlate}/edit/${id}`, { data }).toPromise();
     }
   }
+
+  deletectProduct(id, category) {
+    if (category === 'drink') {
+      this.httpClient.delete(`${this.urlDrink}/delete/${id}/${category}`).toPromise();
+    } else {
+      this.httpClient.delete(`${this.urlPlate}/delete/${id}/${category}`).toPromise();
+    }
+  }
 }
