@@ -1,1 +1,2 @@
-<app-form-drink [modify]='"modify"'></app-form-drink>
+<app-form-drink *ngIf="category==='drink'" [modify]='"modify"'></app-form-drink>
+<app-form-plate *ngIf="category!=='drink'" [modify]='"modify"'></app-form-plate>

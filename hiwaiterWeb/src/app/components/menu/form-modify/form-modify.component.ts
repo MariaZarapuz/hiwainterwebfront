@@ -7,11 +7,14 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./form-modify.component.css']
 })
 export class FormModifyComponent implements OnInit {
+  category: any;
 
 
-  constructor() { }
+  constructor(private activatedRouter: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRouter.params.subscribe(params => this.category = params.category);
+    console.log(this.category)
 
   }
 

@@ -1,5 +1,7 @@
 <div>
-  <h2 class="subtittle">Insertar Plato</h2>
+  <h2 *ngIf="modify!=='modify'" class="subtittle">Insertar Plato</h2>
+  <h2 *ngIf="modify==='modify'" class="subtittle">Modifica tu Plato</h2>
+
   <div>
     <form [formGroup]="formPlate" (ngSubmit)="sendFormMenu()" class="row">
       <div class="row col-12">
@@ -20,7 +22,7 @@
             </div>
             <select formControlName="category" name="">
               <option value="">Seleciona un tipo de plato</option>
-              <option *ngFor="let type of arrayTypeFood" [value]=type n>{{type}}</option>
+              <option *ngFor="let type of arrayTypeFood" [value]=type>{{type}}</option>
             </select>
           </div>
         </div>
@@ -41,11 +43,17 @@
         </div>
         <div class="row">
           <div class="col-6 modifyCol2 form-group" *ngFor="let allengen of arrayAllergens">
-            <div>
+            <div *ngIf="modify==='modify'">
 
-              <input formControlName="{{allengen.name}}" type="checkbox" class="form-check-input col-5">
+              <input formControlName="{{allengen.name}}" type="checkbox" class="form-check-input col-5"
+                [checked]="dataProduct[allengen.name]">
               <p class="col-7">{{allengen.translate}}</p>
 
+            </div>
+
+            <div *ngIf="modify!=='modify'">
+              <input formControlName="{{allengen.name}}" type="checkbox" class="form-check-input col-5">
+              <p class="col-7">{{allengen.translate}}</p>
             </div>
           </div>
         </div>
@@ -64,9 +72,14 @@
         </div>
         <input formControlName="img" type="file">
       </div>
-      <button class="btn save" type="submit">
-        Enviar
+      <button *ngIf="this.modify==='read'" class="btn save" type="submit">
+        Guardar
       </button>
+
+      <button *ngIf="this.modify==='modify'" class="btn save" (click)="formModify()" type="button">
+        Modificar
+      </button>
+
     </form>
   </div>
 </div>

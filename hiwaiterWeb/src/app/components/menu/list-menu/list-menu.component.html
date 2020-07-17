@@ -15,7 +15,7 @@
         <span class="col-8">{{product.name}}</span>
         <input class="col-2 active" id="{{product.id}}" type="checkbox" value="{{product.active}}"
           (click)="activeOrNoActive(product.id,product.active,'plates')" [checked]="product.active">
-        <button class="col-2 btn">Modificar</button>
+        <button class="col-2 btn" [routerLink]="['./form-menu/modify',product.id,product.category]">Modificar</button>
       </div>
     </div>
 
@@ -31,7 +31,7 @@
           <span class="col-8">{{product.name}}</span>
           <input class="col-2 active" id="{{product.id}}" type="checkbox" value="{{product.active}}"
             (click)="activeOrNoActive(product.id,product.active,'drink')" [checked]="product.active">
-          <button class="col-2 btn" [routerLink]="['./form-menu/modify',product.id]">Modificar</button>
+          <button class="col-2 btn" [routerLink]="['./form-menu/modify',product.id,product.category]">Modificar</button>
         </div>
       </div>
     </div>

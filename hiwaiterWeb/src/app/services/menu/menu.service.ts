@@ -30,11 +30,19 @@ export class MenuService {
   activeOrNoActivePlaces(id, active) {
     this.httpClient.put(`${this.urlPlate}/updateActive`, { active, id }).toPromise();
   }
-  getFormDrinkModify(id) {
-    return this.httpClient.get(`${this.urlDrink}/${id}`).toPromise();
+  getFormModify(id, category) {
+    if (category === 'drink') {
+      return this.httpClient.get(`${this.urlDrink}/${id}`).toPromise();
+    } else {
+      return this.httpClient.get(`${this.urlPlate}/${id}`).toPromise();
+    }
   }
 
   formModify(id, data) {
-    this.httpClient.put(`${this.urlDrink}/edit/${id}`, { data }).toPromise();
+    if (data.category === 'drink') {
+      this.httpClient.put(`${this.urlDrink}/edit/${id}`, { data }).toPromise();
+    } else {
+      this.httpClient.put(`${this.urlPlate}/edit/${id}`, { data }).toPromise();
+    }
   }
 }

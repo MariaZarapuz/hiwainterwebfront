@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'tableDetail/:id', component: TableDetailComponent },
   { path: 'menu', component: ListMenuComponent },
   { path: 'menu/form-menu', component: FormMenuComponent },
-  { path: 'menu/form-menu/modify/:id', component: FormModifyComponent },
+  { path: 'menu/form-menu/modify/:id/:category', component: FormModifyComponent },
   { path: 'kitchen', component: KitchenComponent },
 
 

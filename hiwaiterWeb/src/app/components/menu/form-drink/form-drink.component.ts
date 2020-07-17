@@ -19,10 +19,12 @@ export class FormDrinkComponent implements OnInit {
     'Refresco', 'Cerveza', 'Vino', 'Coctel'
   ];
   dataProduct: any;
+  category: any;
 
   constructor(
     private menuService: MenuService,
     private activatedRouter: ActivatedRoute) {
+
     this.formDrink = new FormGroup({
       name: new FormControl(''),
       price: new FormControl(''),
@@ -33,9 +35,12 @@ export class FormDrinkComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activatedRouter.params.subscribe(params => this.id = params.id);
+    this.activatedRouter.params.subscribe(params => {
+      this.id = params.id;
+      this.category = params.category;
+    });
     if (this.modify === 'modify') {
-      this.getFormDrinkModify(this.id);
+      this.getFormDrinkModify(this.id, this.category);
     }
 
   }
@@ -45,8 +50,8 @@ export class FormDrinkComponent implements OnInit {
     this.menuService.insertDrink(drink);
   }
 
-  async getFormDrinkModify(id) {
-    this.dataProduct = await this.menuService.getFormDrinkModify(id);
+  async getFormDrinkModify(id, category) {
+    this.dataProduct = await this.menuService.getFormModify(id, category);
     console.log(this.dataProduct)
     this.formDrink = new FormGroup({
       name: new FormControl(this.dataProduct[0].name),
