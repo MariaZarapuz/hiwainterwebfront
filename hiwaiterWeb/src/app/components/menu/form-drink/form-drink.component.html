@@ -37,8 +37,12 @@
         <textarea formControlName="description" cols=" 70" rows="10"></textarea>
       </div>
 
-      <button class="btn save" type="submit">
-        Enviar
+      <button *ngIf="this.modify==='read'" class="btn save" type="submit">
+        Guardar
+      </button>
+
+      <button *ngIf="this.modify==='modify'" class="btn save" (click)="formModify()" type="button">
+        Modificar
       </button>
 
     </form>
