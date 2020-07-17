@@ -4,27 +4,28 @@
   </h2>
 
   <div>
-    <h3>Platos</h3>
-    <div>
-      <div class="row">
-        <p class="col-6">Nombre</p>
-        <p class="col-2 text-center">Activo</p>
+    <div *ngIf="this.listProducts.plates.length !==0">
+      <h3>Platos</h3>
+      <div>
+        <div class=" row">
+          <p class="col-6">Nombre</p>
+          <p class="col-2 text-center">Activo</p>
 
-      </div>
-      <div class="row product" *ngFor="let product of listProducts?.plates">
-        <span class="col-6">{{product.name}}</span>
-        <input class="col-2 active" id="{{product.id}}" type="checkbox" value="{{product.active}}"
-          (click)="activeOrNoActive(product.id,product.active,'plates')" [checked]="product.active">
-        <button class="col-2 btn" [routerLink]="['./form-menu/modify',product.id,product.category]">Modificar</button>
-        <div class="col-1"></div>
-        <button class="col-1 btn" (click)="deleteProduct(product.id,product.category)">
-          <fa-icon [icon]="faTrash"></fa-icon>
-        </button>
+        </div>
+        <div class="row product" *ngFor="let product of listProducts?.plates">
+          <span class="col-6">{{product.name}}</span>
+          <input class="col-2 active" id="{{product.id}}" type="checkbox" value="{{product.active}}"
+            (click)="activeOrNoActive(product.id,product.active,'plates')" [checked]="product.active">
+          <button class="col-2 btn" [routerLink]="['./form-menu/modify',product.id,product.category]">Modificar</button>
+          <div class="col-1"></div>
+          <button class="col-1 btn" (click)="deleteProduct(product.id,product.category)">
+            <fa-icon [icon]="faTrash"></fa-icon>
+          </button>
 
+        </div>
       </div>
     </div>
-
-    <div>
+    <div *ngIf="this.listProducts.drinks.length !==0">
       <h3>Bebidas</h3>
       <div>
         <div class="row">
@@ -46,7 +47,7 @@
       </div>
     </div>
     <hr>
-    <div class="wrapper">
+    <div class="wrapper my-5">
       <button class="btn insert" [routerLink]="['./form-menu']">Insertar plato</button>
 
       <button class="btn" [routerLink]="['./form-menu']">Insertar bebida</button>

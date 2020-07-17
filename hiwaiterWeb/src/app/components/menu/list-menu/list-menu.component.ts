@@ -35,7 +35,8 @@ export class ListMenuComponent implements OnInit {
   }
 
   async deleteProduct(id, category) {
-    this.listProducts = await this.menuService.deletectProduct(id, category);
+    await this.menuService.deletectProduct(id, category);
+    this.getAllMenu();
   }
 }
 

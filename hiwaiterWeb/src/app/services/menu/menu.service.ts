@@ -48,9 +48,10 @@ export class MenuService {
 
   deletectProduct(id, category) {
     if (category === 'drink') {
-      this.httpClient.delete(`${this.urlDrink}/delete/${id}/${category}`).toPromise();
+      return this.httpClient.delete(`${this.urlDrink}/delete/${id}`).toPromise();
     } else {
-      this.httpClient.delete(`${this.urlPlate}/delete/${id}/${category}`).toPromise();
+      return this.httpClient.delete(`${this.urlPlate}/delete/${id}`).toPromise();
     }
+
   }
 }
