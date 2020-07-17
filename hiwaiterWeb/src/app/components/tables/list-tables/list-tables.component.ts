@@ -9,11 +9,11 @@ import { OrderService } from 'src/app/services/order/order.service';
 })
 export class ListTablesComponent implements OnInit {
   ArrayStatusLiteral = [
-    { name: 'waiterRequest', translate: 'Solicitan camarero' },
-    { name: 'accountRequested', translate: 'Cuenta solicitada' },
-    { name: 'kitchenOrder', translate: 'Pedido en cocina' },
-    { name: 'orderReceived', translate: 'Pedido recepcionado' },
-    { name: 'orderServed', translate: 'Pedido servido' },
+    { name: 'waiterRequest', translate: 'solicita camarero' },
+    { name: 'accountRequested', translate: 'cuenta solicitada' },
+    { name: 'kitchenOrder', translate: 'pedido en cocina' },
+    { name: 'orderReceived', translate: 'pedido recepcionado' },
+    { name: 'orderServed', translate: 'pedido servido' },
 
   ];
   ArrayStatus = [
@@ -58,8 +58,7 @@ export class ListTablesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTables();
-    this.generateListTable();
-    this.countTableByCategory();
+
   }
 
   pushTable(position, table, mode) {
@@ -76,35 +75,40 @@ export class ListTablesComponent implements OnInit {
     }
   }
 
-  getTables() {
-    this.listTables = this.orderService.getListTables();
+  async getTables() {
+    this.listTables = await this.orderService.getListTables();
+    console.log(this.listTables)
+    this.generateListTable();
+    this.countTableByCategory();
   }
 
   generateListTable() {
     for (const table of this.listTables) {
+      console.log(table.state)
       switch (table.state) {
-        case 'Solicitan camarero':
+        case 'solicita camarero':
           this.pushTable(0, table, 'waiterRequest');
           break;
-        case 'Cuenta solicitada':
+        case 'cuenta solicitada':
           this.pushTable(1, table, 'accountRequested');
           break;
-        case 'Pedido servido':
+        case 'pedido servido':
           this.pushTable(4, table, 'orderServed');
           break;
-        case 'Pedido en cocina':
+        case 'pedido en cocina':
           this.pushTable(2, table, 'kitchenOrder');
           break;
-        case 'Pedido recepcionado':
+        case 'pedido recepcionado':
           this.pushTable(3, table, 'orderReceived');
           break;
-        case 'Mesa vacia':
+        case 'mesa vacia':
           this.pushTable(5, table, 'emptyTable');
           break;
         default:
           break;
       }
     }
+    console.log(this.ArrayStatus)
   }
 
 
