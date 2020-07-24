@@ -8,7 +8,7 @@
         'orange': literal.translate === msg.ACCOUNTREQUESTED,
         'white': literal.translate=== msg.KITCHENORDER,
         'purple': literal.translate===msg.ORDERRECEIVED,
-        'yellow': literal.translate===msg.ORDERREQUEST
+        'yellow': literal.translate===msg.OCCUPY
       }">{{literal.translate}}</h3>
       <div *ngFor="let status of ArrayStatus; let i=index ">
         <button [ngClass]="{
@@ -17,7 +17,7 @@
           'colorOrange': literal.translate === msg.ACCOUNTREQUESTED,
           'white': literal.translate=== msg.KITCHENORDER,
           'purple': literal.translate===msg.ORDERRECEIVED,
-          'yellow': literal.translate===msg.ORDERREQUEST
+          'yellow': literal.translate===msg.OCCUPY
         }" class="tableNumber btn" *ngFor="let category of status[literal.name]" id='{{category.number}}'
           [routerLink]="['/tableDetail', category.number]">
           {{msg.TABLE}} {{category.number}}</button>

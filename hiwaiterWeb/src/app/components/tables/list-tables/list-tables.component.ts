@@ -11,7 +11,7 @@ export class ListTablesComponent implements OnInit {
   ArrayStatusLiteral = [
     { name: 'waiterRequest', translate: 'solicita camarero' },
     { name: 'accountRequested', translate: 'cuenta solicitada' },
-    { name: 'orderRequest', translate: 'solicitud de pedido' },
+    { name: 'occupy', translate: 'ocupada' },
     { name: 'kitchenOrder', translate: 'pedido en cocina' },
     { name: 'orderReceived', translate: 'pedido recepcionado' },
     { name: 'orderServed', translate: 'pedido servido' },
@@ -26,7 +26,7 @@ export class ListTablesComponent implements OnInit {
       accountRequested: []
     },
     {
-      orderRequest: []
+      occupy: []
     },
     {
       kitchenOrder: []
@@ -50,7 +50,7 @@ export class ListTablesComponent implements OnInit {
     ACCOUNTREQUESTED: Status.ACCOUNTREQUESTED,
     KITCHENORDER: Status.KITCHENORDER,
     ORDERRECEIVED: Status.ORDERRECEIVED,
-    ORDERREQUEST: Status.ORDERREQUEST,
+    OCCUPY: Status.OCCUPY,
     ORANGE: Color.ORANGE,
     RED: Color.RED
   };
@@ -110,8 +110,8 @@ export class ListTablesComponent implements OnInit {
         case 'mesa vacia':
           this.pushTable(6, table, 'emptyTable');
           break;
-        case 'solicitud de pedido':
-          this.pushTable(2, table, 'orderRequest');
+        case 'ocupada':
+          this.pushTable(2, table, 'occupy');
           break;
         default:
           break;

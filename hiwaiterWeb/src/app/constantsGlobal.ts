@@ -8,7 +8,7 @@ export class GlobalConstants {
 
 }
 export class Status {
-  static ORDERREQUEST = 'solicitud de pedido';
+  static OCCUPY = 'ocupada';
   static ORDERSERVED = 'pedido servido';
   static WAITERREQUEST = 'solicita camarero';
   static ACCOUNTREQUESTED = 'cuenta solicitada';
