@@ -17,7 +17,13 @@ export class MenuService {
   }
 
   insertDrink(drink) {
-    this.httpClient.post(`${this.urlDrink}/add`, drink).toPromise();
+    return this.httpClient.post(`${this.urlDrink}/add`, drink).toPromise();
+  }
+
+  sendImage(img, id) {
+    console.log(img);
+    return this.httpClient.post(`${this.urlDrink}/upload/${id}`, img).toPromise();
+
   }
 
   getMenu() {
