@@ -20,6 +20,8 @@ export class FormDrinkComponent implements OnInit {
   ];
   dataProduct: any;
   category: any;
+  image: any;
+  formData: FormData;
 
   constructor(
     private router: Router,
@@ -32,6 +34,7 @@ export class FormDrinkComponent implements OnInit {
       category: new FormControl('drink'),
       description: new FormControl(''),
       type: new FormControl('')
+
     });
   }
 
@@ -46,9 +49,35 @@ export class FormDrinkComponent implements OnInit {
 
   }
 
+  onSubmit() {
+    this.sendFormDrink().then((res => {
+      this.id = res;
+      console.log(this.id)
+      this.sendImagen(this.id);
+    }));
+
+  }
+
+  selectAndPreparedImage(e) {
+
+    if (e.target.files.length > 0) {
+      const file = e.target.files[0];
+      this.image = file;
+    }
+  }
+
+  sendImagen(id) {
+    const formData = new FormData();
+    console.log(formData);
+    formData.append('img', this.image);
+
+    this.menuService.sendImage(formData, id);
+  }
+
   sendFormDrink() {
+    console.log(this.formDrink.value);
     const drink = this.formDrink.value;
-    this.menuService.insertDrink(drink);
+    return this.menuService.insertDrink(drink);
   }
 
   async getFormDrinkModify(id, category) {
@@ -59,7 +88,7 @@ export class FormDrinkComponent implements OnInit {
       price: new FormControl(this.dataProduct[0].price),
       category: new FormControl('drink'),
       description: new FormControl(this.dataProduct[0].description),
-      type: new FormControl(this.dataProduct[0].type)
+      type: new FormControl(this.dataProduct[0].type),
     });
   }
 

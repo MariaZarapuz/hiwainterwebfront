@@ -3,7 +3,7 @@
   <h2 *ngIf="modify==='modify'" class="subtittle">Modifica tu bebida</h2>
 
   <div>
-    <form [formGroup]="formDrink" (ngSubmit)="sendFormDrink()" class="row">
+    <form [formGroup]="formDrink" enctype="multipart/form-data" (ngSubmit)="onSubmit()" class="row">
 
       <div class="row col-12 text-center">
         <div class="col-4">
@@ -26,6 +26,10 @@
             <label for="price">Precio</label>
           </div>
           <input formControlName="price" type="number">
+        </div>
+        <div>
+          <label for="">Imagen</label>
+          <input type="file" single name="image" (change)="selectAndPreparedImage($event)">
         </div>
 
       </div>
