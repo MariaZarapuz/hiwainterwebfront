@@ -4,7 +4,7 @@
   </h2>
 
   <div>
-    <div *ngIf="this.listProducts.plates.length !==0">
+    <div *ngIf="this.listProducts?.plates.length !==0">
       <h3>Platos</h3>
       <div>
         <div class=" row">
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <div *ngIf="this.listProducts.drinks.length !==0">
+    <div *ngIf="this.listProducts?.drinks.length !==0">
       <h3>Bebidas</h3>
       <div>
         <div class="row">
@@ -48,9 +48,8 @@
     </div>
     <hr>
     <div class="wrapper my-5">
-      <button class="btn insert" [routerLink]="['./form-menu']">Insertar plato</button>
+      <button class="btn insert" [routerLink]="['./form-menu']">Insertar producto</button>
 
-      <button class="btn" [routerLink]="['./form-menu']">Insertar bebida</button>
     </div>
 
   </div>

@@ -54,6 +54,8 @@ export class FormDrinkComponent implements OnInit {
       this.id = res;
       console.log(this.id)
       this.sendImagen(this.id);
+      this.router.navigate(['/menu'])
+
     }));
 
   }
@@ -78,6 +80,7 @@ export class FormDrinkComponent implements OnInit {
     console.log(this.formDrink.value);
     const drink = this.formDrink.value;
     return this.menuService.insertDrink(drink);
+
   }
 
   async getFormDrinkModify(id, category) {

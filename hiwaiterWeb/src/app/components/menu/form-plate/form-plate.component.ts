@@ -142,6 +142,8 @@ export class FormPlateComponent implements OnInit {
     plate = this.changeFalseOrTrue(plate);
     plate = this.createObjectMenu(plate);
     this.menuService.insertPlate(plate);
+    this.router.navigate(['/menu'])
+
   }
 
   createObjectMenu(plate) {
